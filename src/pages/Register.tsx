@@ -97,7 +97,7 @@ const Register: React.FC = () => {
     return (
         <IonPage>
             <IonContent className="ion-padding">
-                <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 bg-gradient-to-b from-gray-100 to-white">
+                <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 bg-gradient-to-b from-gray-100 to-black">
                     <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl border-x-8 border-blue-700">
                         <h1 className="text-3xl font-bold text-center text-black mb-6">Create your account</h1>
 
@@ -109,9 +109,9 @@ const Register: React.FC = () => {
                             placeholder="Enter a unique username"
                             value={username}
                             onIonChange={(e) => setUsername(e.detail.value!)}
-                            style={{ marginTop: '15px' }}
-                        />
-                        <IonInput
+                            style={{ '--color': 'black', '--placeholder-color': '#4B5563', marginTop: '15px' }}
+                            />
+                            <IonInput
                             label="First Name"
                             labelPlacement="stacked"
                             fill="outline"
@@ -119,9 +119,9 @@ const Register: React.FC = () => {
                             placeholder="Enter your first name"
                             value={firstName}
                             onIonChange={(e) => setFirstName(e.detail.value!)}
-                            style={{ marginTop: '15px' }}
-                        />
-                        <IonInput
+                            style={{ '--color': 'black', '--placeholder-color': '#4B5563', marginTop: '15px' }}
+                            />
+                            <IonInput
                             label="Last Name"
                             labelPlacement="stacked"
                             fill="outline"
@@ -129,9 +129,9 @@ const Register: React.FC = () => {
                             placeholder="Enter your last name"
                             value={lastName}
                             onIonChange={(e) => setLastName(e.detail.value!)}
-                            style={{ marginTop: '15px' }}
-                        />
-                        <IonInput
+                            style={{ '--color': 'black', '--placeholder-color': '#4B5563', marginTop: '15px' }}
+                            />
+                            <IonInput
                             label="Email"
                             labelPlacement="stacked"
                             fill="outline"
@@ -139,9 +139,9 @@ const Register: React.FC = () => {
                             placeholder="youremail@nbsc.edu.ph"
                             value={email}
                             onIonChange={(e) => setEmail(e.detail.value!)}
-                            style={{ marginTop: '15px' }}
-                        />
-                        <IonInput
+                            style={{ '--color': 'black', '--placeholder-color': '#4B5563', marginTop: '15px' }}
+                            />
+                            <IonInput
                             label="Password"
                             labelPlacement="stacked"
                             fill="outline"
@@ -149,11 +149,11 @@ const Register: React.FC = () => {
                             placeholder="Enter password"
                             value={password}
                             onIonChange={(e) => setPassword(e.detail.value!)}
-                            style={{ marginTop: '15px' }}
-                        >
+                            style={{ '--color': 'black', '--placeholder-color': '#4B5563', marginTop: '15px' }}
+                            >
                             <IonInputPasswordToggle slot="end" />
-                        </IonInput>
-                        <IonInput
+                            </IonInput>
+                            <IonInput
                             label="Confirm Password"
                             labelPlacement="stacked"
                             fill="outline"
@@ -161,10 +161,11 @@ const Register: React.FC = () => {
                             placeholder="Confirm password"
                             value={confirmPassword}
                             onIonChange={(e) => setConfirmPassword(e.detail.value!)}
-                            style={{ marginTop: '15px' }}
-                        >
+                            style={{ '--color': 'black', '--placeholder-color': '#4B5563', marginTop: '15px' }}
+                            >
                             <IonInputPasswordToggle slot="end" />
-                        </IonInput>
+                            </IonInput>
+
 
                         <IonButton
                             onClick={handleOpenVerificationModal}
