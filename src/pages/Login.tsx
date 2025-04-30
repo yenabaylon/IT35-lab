@@ -51,76 +51,77 @@ const Login: React.FC = () => {
   };
 
   return (
-    <IonPage>
-      <IonContent className="ion-padding">
-        <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 bg-gradient-to-b from-gray-100 to-white">
-          <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl border-x-8 border-blue-700">
-            <div className="flex justify-center mb-6">
-              <img
-                src="https://cdn-icons-gif.flaticon.com/14673/14673980.gif"
-                alt="Logo"
-                className="w-32 h-32"
+          <IonPage>
+        <IonContent className="ion-padding bg-black">
+          <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 bg-black">
+            <div className="w-full max-w-md bg-zinc-900 p-8 rounded-2xl shadow-xl border-x-8 border-blue-700">
+              <div className="flex justify-center mb-6">
+                <img
+                  src="https://cdn-icons-gif.flaticon.com/14673/14673980.gif"
+                  alt="Logo"
+                  className="w-32 h-32"
+                />
+              </div>
+
+              <h1 className="text-3xl font-bold text-center text-white mb-6">User Login</h1>
+
+              <IonInput
+                className="mb-4 text-white"
+                label="Email"
+                labelPlacement="floating"
+                fill="outline"
+                type="email"
+                placeholder="Enter Email"
+                value={email}
+                onIonChange={(e) => setEmail(e.detail.value!)}
               />
+
+              <IonInput
+                className="mb-6 text-white"
+                fill="outline"
+                type="password"
+                placeholder="Enter Password"
+                value={password}
+                onIonChange={(e) => setPassword(e.detail.value!)}
+              >
+                <IonInputPasswordToggle slot="end" />
+              </IonInput>
+
+              <IonButton
+                expand="block"
+                shape="round"
+                fill="outline"
+                className="mb-4 border border-blue-700 text-white font-semibold"
+                onClick={doLogin}
+              >
+                Login
+              </IonButton>
+
+              <IonButton
+                routerLink="/it35-lab/register"
+                expand="block"
+                fill="clear"
+                shape="round"
+                className="text-blue-400 underline font-medium"
+              >
+                Don't have an account? Register here
+              </IonButton>
             </div>
-
-            <h1 className="text-3xl font-bold text-center text-black mb-6">User Login</h1>
-
-            <IonInput
-              className="mb-4 text-black"
-              label="Email"
-              labelPlacement="floating"
-              fill="outline"
-              type="email"
-              placeholder="Enter Email"
-              value={email}
-              onIonChange={(e) => setEmail(e.detail.value!)}
-            />
-
-            <IonInput
-              className="mb-6 text-black"
-              fill="outline"
-              type="password"
-              placeholder="Enter Password"
-              value={password}
-              onIonChange={(e) => setPassword(e.detail.value!)}
-            >
-              <IonInputPasswordToggle slot="end" />
-            </IonInput>
-
-            <IonButton
-              expand="block"
-              shape="round"
-              fill="outline"
-              className="mb-4 border border-blue-700 text-black font-semibold"
-              onClick={doLogin}
-            >
-              Login
-            </IonButton>
-
-            <IonButton
-              routerLink="/it35-lab/register"
-              expand="block"
-              fill="clear"
-              shape="round"
-              className="text-blue-700 underline font-medium"
-            >
-              Don't have an account? Register here
-            </IonButton>
           </div>
-        </div>
 
-        <AlertBox message={alertMessage} isOpen={showAlert} onClose={() => setShowAlert(false)} />
+          <AlertBox message={alertMessage} isOpen={showAlert} onClose={() => setShowAlert(false)} />
 
-        <IonToast
-          isOpen={showToast}
-          onDidDismiss={() => setShowToast(false)}
-          message="Login successful! Redirecting..."
-          duration={1500}
-          position="top"
-          color="primary"
-        />
-      </IonContent>
-    </IonPage>
+          <IonToast
+            isOpen={showToast}
+            onDidDismiss={() => setShowToast(false)}
+            message="Login successful! Redirecting..."
+            duration={1500}
+            position="top"
+            color="primary"
+          />
+        </IonContent>
+      </IonPage>
+
   );
 };
 
